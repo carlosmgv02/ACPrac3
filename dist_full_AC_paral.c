@@ -69,5 +69,3 @@ int main(int np, char*p[])
 
     exit(0);
 }
-
-
