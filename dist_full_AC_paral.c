@@ -8,16 +8,18 @@
 #define N 50000
 
 int nn;
+int nThreads;
 double *D[N],*apD,*X, *Y, *Z;
 
-int main(int np, char*p[])
+int main(int np, char*p[])  
 {
     int i,j,rr;
     long long sD;
-
-    assert(np==2);
+    
+    assert(np==3);
 
     nn = atoi(p[1]);
+    nThreads=atoi(p[2]); 
     assert(nn<=N);
     srand(1);
 

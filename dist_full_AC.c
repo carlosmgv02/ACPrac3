@@ -14,10 +14,11 @@ int main(int np, char*p[])
 {
     int i,j,rr;
     long long sD;
-
+    
     assert(np==2);
 
     nn = atoi(p[1]);
+    
     assert(nn<=N);
     srand(1);
 
