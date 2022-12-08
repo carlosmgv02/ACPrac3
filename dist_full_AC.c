@@ -12,6 +12,9 @@ double *D[N],*apD,*X, *Y, *Z;
 
 int main(int np, char*p[])
 {
+    clock_t start_t, end_t;
+    double total_t;
+
     int i,j,rr;
     long long sD;
     
@@ -27,23 +30,34 @@ int main(int np, char*p[])
     //creacio matrius i vectors
     apD = calloc(nn*nn,sizeof(double)); assert (apD);
     D[0] = apD;
+
+    start_t = clock();
     for (i=0;i<nn;i++) {
         D[i+1] = D[i] + nn;
     }
+    end_t = clock();   
+    total_t = (double)(end_t - start_t) / CLOCKS_PER_SEC;
+    printf("TEMPS BUCLE 1: %f\n", total_t  );
+
     X = calloc(nn,sizeof(double)); assert (X);
     Y = calloc(nn,sizeof(double)); assert (Y);
     Z = calloc(nn,sizeof(double)); assert (Z);
 
     // Inicialitzacio
     rr = rand();
+    start_t = clock();
     for (i=0;i<nn;i++) {
         X[i]=(rr*i)%100 - 49.0;
         Y[i]=(rr*2*i)%100 - 49.0;
         Z[i]=(rr*3*i)%100 - 49.0;
         //printf("%lg, %lg, %lg \n",X[i],Y[i],Z[i]);
     }
+    end_t = clock();   
+    total_t = (double)(end_t - start_t) / CLOCKS_PER_SEC;
+    printf("TEMPS BUCLE 2: %f\n", total_t  );
 
     // calcul de distancies
+    start_t = clock();
     for (i=0;i<nn;i++) {
         for (j=0;j<nn;j++) {
             D[i][j] = sqrt(pow((X[i] - X[j]),2)
@@ -51,9 +65,13 @@ int main(int np, char*p[])
                            + pow((Z[i] - Z[j]),2));
         }
     }
+    end_t = clock();   
+    total_t = (double)(end_t - start_t) / CLOCKS_PER_SEC;
+    printf("TEMPS BUCLE 3: %f\n", total_t  );
 
     // comprovacio
     sD = 0;
+    start_t = clock();
     for (i=0;i<nn;i++) {
         for (j=i+1;j<nn;j++) {
             //printf("%lg ",D[i][j]);
@@ -65,6 +83,9 @@ int main(int np, char*p[])
         }
         //printf("\n");
     }
+    end_t = clock();   
+    total_t = (double)(end_t - start_t) / CLOCKS_PER_SEC;
+    printf("TEMPS BUCLE 4: %f\n", total_t  );
 
     printf("Suma elements de D: %lld \n",sD);
 
