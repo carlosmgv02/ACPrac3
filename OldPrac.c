@@ -53,7 +53,7 @@ void *funcio_thread(void* Tnum_thread){
 }
 
 void *funcio_thread2(void* Tnum_thread){
-    // Comprovacio MD x M -> M i MD x MD -> M
+    // Comprovacio MD x M -> M i MD x MD -> MPTHREAD_MUTEX_INITIALIZER
     // PARAL.LELITZACIO OPCIONAL
     int i,j, block;
     int num_thread = (int) Tnum_thread;

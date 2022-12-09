@@ -7,39 +7,50 @@
 #include <pthread.h>
 
 #define N 50000
-#define MAX_THREADS
+#define MAX_THREADS 256
 
 int nn;
 int sD=0;
 int nThreads;
-FILE *fp;
+
 
 double *D[N],*apD,*X, *Y, *Z;
 
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER; 
-
+pthread_t tid[MAX_THREADS];
 
 void * calc_distancies(void* thread_id){  //array[2] = {inicial, final}
-    int n_thread=(int)thread_id;
+    int n_thread= (int)thread_id;
+    FILE *fp=fopen("trazaParalel.txt","w");
     int i,j,rang;
-    rang=N/nThreads;
+
+    rang=nn/nThreads;
     int rang_ini=rang * n_thread;
     int rang_fin=rang * (n_thread + 1);
-    
-    if(n_thread==nThreads)
-        rang_fin=N;
-        
-    
+    printf("n_thread = %d\n", n_thread);
+    if(n_thread==nThreads-1){
+        rang_fin=nn;
+    }
+    printf("Rang_inicial= %d,rang_fin= %d\n",rang_ini,rang_fin);
+
+   
     for (i=rang_ini;i<rang_fin;i++) {
         for (j=0;j<nn;j++) {
-
-            pthread_mutex_lock(&mutex);
+            
+            fprintf(fp,"D[%d][%d]\n",D[i][j],i,j);
+            fprintf(fp,"X[%d]= %f, X[%d]= %f\n",i,j,X[i],X[j]);
+            fprintf(fp,"Y[%d]= %f, Y[%d]= %f\n",i,j,Y[i],Y[j]); 
+            fprintf(fp,"Y[%d]= %f, Y[%d]= %f\n",i,j,Y[i],Y[j]);
+            
             D[i][j] = sqrt(pow((X[i] - X[j]),2)
                            + pow((Y[i] - Y[j]),2)
                            + pow((Z[i] - Z[j]),2));
-            pthread_mutex_unlock(&mutex);
+            
+            
         }
+        
     }
+    fclose(fp);
     pthread_exit(NULL);
     
 }
@@ -50,7 +61,7 @@ void *comprovacio(void* thread_id){
     rang=N/nThreads;
     int rang_ini=rang * n_thread;
     int rang_fin=rang * (n_thread + 1);
-
+    
     if(n_thread==nThreads-1){
         rang_fin=N;
     }
@@ -62,6 +73,7 @@ void *comprovacio(void* thread_id){
             pthread_mutex_lock(&mutex);
             sD += (long long) (D[i][j]);
             pthread_mutex_unlock(&mutex);
+            
             if (D[i][j] != D[j][i]) {
                 printf("diff in %d,%d: %g != %g",i,j,D[i][j],D[j][i]);
                 abort();
@@ -87,7 +99,7 @@ int main(int np, char*p[])
     
     if(nThreads > 256) 
         nThreads = 256;
-    pthread_t tid[nThreads];
+    
     
     assert(nn<=N);
     srand(1);
@@ -103,7 +115,7 @@ int main(int np, char*p[])
     X = calloc(nn,sizeof(double)); assert (X);
     Y = calloc(nn,sizeof(double)); assert (Y);
     Z = calloc(nn,sizeof(double)); assert (Z);
-
+    
     // Inicialitzacio
     rr = rand();
     for (i=0;i<nn;i++) {
@@ -116,7 +128,7 @@ int main(int np, char*p[])
 
     for(i=0; i<nThreads; i++){
         printf("Creant thread %d\n", i+1);
-        pthread_create(&tid[i],NULL,calc_distancies,(void *)i);
+        pthread_create(&tid[i],NULL,calc_distancies,(void*)i);
     }
 
      //Esperem a que acabin els threads
@@ -125,16 +137,16 @@ int main(int np, char*p[])
         pthread_join(tid[i],NULL);
     }
 
-    for(i=0; i<nThreads; i++){
-        printf("Creant thread %d\n", i+1);
-        pthread_create(&tid[i],NULL,comprovacio,(void *)i);  
-    }
+    // for(i=0; i<nThreads; i++){
+    //     printf("Creant thread %d\n", i+1);
+    //     pthread_create(&tid[i],NULL,comprovacio,(void *)i);  
+    // }
 
-     //Esperem a que acabin els threads
-    for(i=0; i<nThreads; i++){
-        printf("Ending thread: %d \n", i+1);
-        pthread_join(tid[i],NULL);
-    }
+    //  //Esperem a que acabin els threads
+    // for(i=0; i<nThreads; i++){
+    //     printf("Ending thread: %d \n", i+1);
+    //     pthread_join(tid[i],NULL);
+    // }
 
 
     printf("Suma elements de D: %lld \n",sD);
