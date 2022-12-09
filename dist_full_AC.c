@@ -10,6 +10,7 @@
 int nn;
 double *D[N],*apD,*X, *Y, *Z;
 
+
 int main(int np, char*p[])
 {   FILE *fp = fopen("trazaNormal.txt", "w");
     clock_t start_t, end_t;
@@ -67,6 +68,7 @@ int main(int np, char*p[])
             D[i][j] = sqrt(pow((X[i] - X[j]),2)
                            + pow((Y[i] - Y[j]),2)
                            + pow((Z[i] - Z[j]),2));
+            fprintf(fp,"D[%d][%d]= %f\n",i,j,D[i][j]);
         }
     }
     end_t = clock();   

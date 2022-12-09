@@ -19,6 +19,14 @@ double *D[N],*apD,*X, *Y, *Z;
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER; 
 pthread_t tid[MAX_THREADS];
 
+
+
+
+struct{
+    long long SumaElems;
+    int nElems;
+}Suma[MAX_THREADS];
+
 void * calc_distancies(void* thread_id){  //array[2] = {inicial, final}
     int n_thread= (int)thread_id;
     FILE *fp=fopen("trazaParalel.txt","w");
@@ -45,6 +53,7 @@ void * calc_distancies(void* thread_id){  //array[2] = {inicial, final}
             D[i][j] = sqrt(pow((X[i] - X[j]),2)
                            + pow((Y[i] - Y[j]),2)
                            + pow((Z[i] - Z[j]),2));
+            fprintf(fp,"D[%d][%d]= %f\n",i,j,D[i][j]);
             
             
         }
@@ -58,21 +67,22 @@ void * calc_distancies(void* thread_id){  //array[2] = {inicial, final}
 void *comprovacio(void* thread_id){
     int i,j, rang;
     int n_thread=(int)thread_id;
-    rang=N/nThreads;
+    rang=nn/nThreads;
     int rang_ini=rang * n_thread;
     int rang_fin=rang * (n_thread + 1);
     
     if(n_thread==nThreads-1){
-        rang_fin=N;
+        rang_fin=nn;
     }
     
     sD = 0;
     for (i=rang_ini;i<rang_fin;i++) {
         for (j=i+1;j<nn;j++) {
             //printf("%lg ",D[i][j]);
-            pthread_mutex_lock(&mutex);
-            sD += (long long) (D[i][j]);
-            pthread_mutex_unlock(&mutex);
+            
+            Suma[n_thread].SumaElems+=(long long)(D[i][j]);
+            //sD += (long long) (D[i][j]);
+            
             
             if (D[i][j] != D[j][i]) {
                 printf("diff in %d,%d: %g != %g",i,j,D[i][j],D[j][i]);
@@ -83,6 +93,7 @@ void *comprovacio(void* thread_id){
     }
     pthread_exit(NULL);
 }
+
 int main(int np, char*p[])  
 {
     int i,j,rr;
@@ -137,17 +148,21 @@ int main(int np, char*p[])
         pthread_join(tid[i],NULL);
     }
 
-    // for(i=0; i<nThreads; i++){
-    //     printf("Creant thread %d\n", i+1);
-    //     pthread_create(&tid[i],NULL,comprovacio,(void *)i);  
-    // }
+    for(i=0; i<nThreads; i++){
+        printf("Creant thread %d\n", i+1);
+        pthread_create(&tid[i],NULL,comprovacio,(void *)i);  
+    }
 
-    //  //Esperem a que acabin els threads
-    // for(i=0; i<nThreads; i++){
-    //     printf("Ending thread: %d \n", i+1);
-    //     pthread_join(tid[i],NULL);
-    // }
-
+     //Esperem a que acabin els threads
+    for(i=0; i<nThreads; i++){
+        printf("Ending thread: %d \n", i+1);
+        pthread_join(tid[i],NULL);
+    }
+    int suma=0;
+    sD=0;
+    for(i=0;i<nThreads; i++){
+        sD+=Suma[i].SumaElems;
+    }
 
     printf("Suma elements de D: %lld \n",sD);
 
