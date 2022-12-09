@@ -61,14 +61,15 @@ int main(int np, char*p[])
     start_t = clock();
     for (i=0;i<nn;i++) {
         for (j=0;j<nn;j++) {
-            fprintf(fp,"D[%d][%d]\n",D[i][j],i,j);
+            /*fprintf(fp,"D[%d][%d]\n",D[i][j],i,j);
             fprintf(fp,"X[%d]= %f, X[%d]= %f\n",i,j,X[i],X[j]);
             fprintf(fp,"Y[%d]= %f, Y[%d]= %f\n",i,j,Y[i],Y[j]); 
             fprintf(fp,"Y[%d]= %f, Y[%d]= %f\n",i,j,Y[i],Y[j]);
+            */
             D[i][j] = sqrt(pow((X[i] - X[j]),2)
                            + pow((Y[i] - Y[j]),2)
                            + pow((Z[i] - Z[j]),2));
-            fprintf(fp,"D[%d][%d]= %f\n",i,j,D[i][j]);
+            //fprintf(fp,"D[%d][%d]= %f\n",i,j,D[i][j]);
         }
     }
     end_t = clock();   

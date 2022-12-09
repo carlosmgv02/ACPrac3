@@ -20,8 +20,6 @@ pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_t tid[MAX_THREADS];
 
 
-
-
 struct{
     long long SumaElems;
     int nElems;
@@ -35,25 +33,25 @@ void * calc_distancies(void* thread_id){  //array[2] = {inicial, final}
     rang=nn/nThreads;
     int rang_ini=rang * n_thread;
     int rang_fin=rang * (n_thread + 1);
-    printf("n_thread = %d\n", n_thread);
+   // printf("n_thread = %d\n", n_thread);
     if(n_thread==nThreads-1){
         rang_fin=nn;
     }
-    printf("Rang_inicial= %d,rang_fin= %d\n",rang_ini,rang_fin);
+    //printf("Rang_inicial= %d,rang_fin= %d\n",rang_ini,rang_fin);
 
    
     for (i=rang_ini;i<rang_fin;i++) {
         for (j=0;j<nn;j++) {
-            
+            /*
             fprintf(fp,"D[%d][%d]\n",D[i][j],i,j);
             fprintf(fp,"X[%d]= %f, X[%d]= %f\n",i,j,X[i],X[j]);
             fprintf(fp,"Y[%d]= %f, Y[%d]= %f\n",i,j,Y[i],Y[j]); 
             fprintf(fp,"Y[%d]= %f, Y[%d]= %f\n",i,j,Y[i],Y[j]);
-            
+            */
             D[i][j] = sqrt(pow((X[i] - X[j]),2)
                            + pow((Y[i] - Y[j]),2)
                            + pow((Z[i] - Z[j]),2));
-            fprintf(fp,"D[%d][%d]= %f\n",i,j,D[i][j]);
+            //fprintf(fp,"D[%d][%d]= %f\n",i,j,D[i][j]);
             
             
         }
@@ -82,7 +80,6 @@ void *comprovacio(void* thread_id){
             
             Suma[n_thread].SumaElems+=(long long)(D[i][j]);
             //sD += (long long) (D[i][j]);
-            
             
             if (D[i][j] != D[j][i]) {
                 printf("diff in %d,%d: %g != %g",i,j,D[i][j],D[j][i]);
@@ -138,24 +135,24 @@ int main(int np, char*p[])
     
 
     for(i=0; i<nThreads; i++){
-        printf("Creant thread %d\n", i+1);
+        //printf("Creant thread %d\n", i+1);
         pthread_create(&tid[i],NULL,calc_distancies,(void*)i);
     }
 
      //Esperem a que acabin els threads
     for(i=0; i<nThreads; i++){
-        printf("Acabant thread: %d \n", i+1);
+        //printf("Acabant thread: %d \n", i+1);
         pthread_join(tid[i],NULL);
     }
 
     for(i=0; i<nThreads; i++){
-        printf("Creant thread %d\n", i+1);
+        //printf("Creant thread %d\n", i+1);
         pthread_create(&tid[i],NULL,comprovacio,(void *)i);  
     }
 
      //Esperem a que acabin els threads
     for(i=0; i<nThreads; i++){
-        printf("Ending thread: %d \n", i+1);
+        //printf("Ending thread: %d \n", i+1);
         pthread_join(tid[i],NULL);
     }
     int suma=0;
