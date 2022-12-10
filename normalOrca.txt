@@ -1,0 +1,51 @@
+*****************
+*NO PARALELITZAT*
+*****************
+Normal 15000
+Dimensio dades =~ 1716.84 Mbytes
+TEMPS BUCLE 1: 0.000092
+TEMPS BUCLE 2: 0.000188
+TEMPS BUCLE 3: 0.757870
+TEMPS BUCLE 4: 0.227662
+Suma elements de D: 14604309281 
+
+real	0m1,018s
+user	0m0,853s
+sys	0m0,137s
+-----------------------------------
+Normal 25000
+Dimensio dades =~ 4768.75 Mbytes
+TEMPS BUCLE 1: 0.000151
+TEMPS BUCLE 2: 0.000443
+TEMPS BUCLE 3: 2.077801
+TEMPS BUCLE 4: 0.666704
+Suma elements de D: 40562635143 
+
+real	0m2,797s
+user	0m2,330s
+sys	0m0,424s
+-----------------------------------
+Normal 35000
+Dimensio dades =~ 9346.54 Mbytes
+TEMPS BUCLE 1: 0.000212
+TEMPS BUCLE 2: 0.000607
+TEMPS BUCLE 3: 4.040801
+TEMPS BUCLE 4: 1.380948
+Suma elements de D: 79504372270 
+
+real	0m5,478s
+user	0m4,597s
+sys	0m0,840s
+-----------------------------------
+Normal 45000
+Dimensio dades =~ 15450.2 Mbytes
+TEMPS BUCLE 1: 0.000275
+TEMPS BUCLE 2: 0.000784
+TEMPS BUCLE 3: 6.673748
+TEMPS BUCLE 4: 2.433222
+Suma elements de D: 131415175060 
+
+real	0m9,179s
+user	0m7,736s
+sys	0m1,396s
+-----------------------------------
