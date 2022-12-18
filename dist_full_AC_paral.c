@@ -133,7 +133,8 @@ int main(int np, char*p[])
         //printf("%lg, %lg, %lg \n",X[i],Y[i],Z[i]);
     }
     
-
+    clock_t start_t, end_t;
+    start_t=clock();
     for(i=0; i<nThreads; i++){
         //printf("Creant thread %d\n", i+1);
         pthread_create(&tid[i],NULL,calc_distancies,(void*)i);
@@ -155,6 +156,9 @@ int main(int np, char*p[])
         //printf("Ending thread: %d \n", i+1);
         pthread_join(tid[i],NULL);
     }
+    end_t=clock();
+    double total=(double)(end_t-start_t)/CLOCKS_PER_SEC;
+    printf("TEMPS PARALELITZAT: %f\n", total);
     int suma=0;
     sD=0;
     for(i=0;i<nThreads; i++){
