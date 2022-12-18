@@ -3,265 +3,297 @@
 *****************
 Paralel 15000, 2 threads
 Dimensio dades =~ 1716.84 Mbytes
+TEMPS PARALELITZAT: 1.236466
 Suma elements de D: 14604309281 
 
-real	0m1,414s
-user	0m1,806s
-sys	0m0,639s
+real	0m1,457s
+user	0m1,975s
+sys	0m0,508s
 -----------------------------------
 Paralel 25000, 2 threads
 Dimensio dades =~ 4768.75 Mbytes
+TEMPS PARALELITZAT: 3.406721
 Suma elements de D: 40562635143 
 
-real	0m3,945s
-user	0m5,445s
-sys	0m1,451s
+real	0m3,920s
+user	0m5,733s
+sys	0m1,105s
 -----------------------------------
 Paralel 35000, 2 threads
 Dimensio dades =~ 9346.54 Mbytes
+TEMPS PARALELITZAT: 6.410028
 Suma elements de D: 79504372270 
 
-real	0m7,306s
-user	0m10,595s
-sys	0m2,369s
+real	0m7,272s
+user	0m10,824s
+sys	0m2,041s
 -----------------------------------
 Paralel 45000, 2 threads
 Dimensio dades =~ 15450.2 Mbytes
+TEMPS PARALELITZAT: 12.301517
 Suma elements de D: 131415175060 
 
-real	0m14,127s
-user	0m20,187s
-sys	0m4,324s
+real	0m14,252s
+user	0m21,222s
+sys	0m3,533s
 -----------------------------------
 ***********************************
 Paralel 15000, 4 threads
 Dimensio dades =~ 1716.84 Mbytes
+TEMPS PARALELITZAT: 0.674673
 Suma elements de D: 14604309281 
 
-real	0m0,898s
-user	0m2,370s
-sys	0m0,392s
+real	0m0,889s
+user	0m2,301s
+sys	0m0,407s
 -----------------------------------
 Paralel 25000, 4 threads
 Dimensio dades =~ 4768.75 Mbytes
+TEMPS PARALELITZAT: 2.043164
 Suma elements de D: 40562635143 
 
-real	0m2,796s
-user	0m7,250s
-sys	0m1,171s
+real	0m2,620s
+user	0m7,078s
+sys	0m1,120s
 -----------------------------------
 Paralel 35000, 4 threads
 Dimensio dades =~ 9346.54 Mbytes
+TEMPS PARALELITZAT: 4.103134
 Suma elements de D: 79504372270 
 
-real	0m5,183s
-user	0m13,333s
-sys	0m2,213s
+real	0m4,966s
+user	0m14,432s
+sys	0m2,027s
 -----------------------------------
 Paralel 45000, 4 threads
 Dimensio dades =~ 15450.2 Mbytes
+TEMPS PARALELITZAT: 6.852850
 Suma elements de D: 131415175060 
 
-real	0m11,414s
-user	0m24,116s
-sys	0m6,046s
+real	0m9,163s
+user	0m23,423s
+sys	0m4,056s
 -----------------------------------
 ***********************************
 Paralel 15000, 8 threads
 Dimensio dades =~ 1716.84 Mbytes
+TEMPS PARALELITZAT: 0.395434
 Suma elements de D: 14604309281 
 
-real	0m0,563s
-user	0m2,635s
-sys	0m0,485s
+real	0m0,571s
+user	0m2,716s
+sys	0m0,456s
 -----------------------------------
 Paralel 25000, 8 threads
 Dimensio dades =~ 4768.75 Mbytes
+TEMPS PARALELITZAT: 1.190977
 Suma elements de D: 40562635143 
 
-real	0m1,644s
-user	0m8,204s
-sys	0m1,212s
+real	0m1,754s
+user	0m8,361s
+sys	0m1,193s
 -----------------------------------
 Paralel 35000, 8 threads
 Dimensio dades =~ 9346.54 Mbytes
+TEMPS PARALELITZAT: 2.243997
 Suma elements de D: 79504372270 
 
-real	0m3,132s
-user	0m15,773s
-sys	0m2,206s
+real	0m3,116s
+user	0m15,873s
+sys	0m2,127s
 -----------------------------------
 Paralel 45000, 8 threads
 Dimensio dades =~ 15450.2 Mbytes
+TEMPS PARALELITZAT: 3.950675
 Suma elements de D: 131415175060 
 
-real	0m6,031s
-user	0m28,473s
-sys	0m3,954s
+real	0m5,556s
+user	0m28,145s
+sys	0m3,530s
 -----------------------------------
 ***********************************
 Paralel 15000, 16 threads
 Dimensio dades =~ 1716.84 Mbytes
+TEMPS PARALELITZAT: 0.318841
 Suma elements de D: 14604309281 
 
-real	0m0,456s
-user	0m4,180s
-sys	0m0,502s
+real	0m0,465s
+user	0m4,510s
+sys	0m0,602s
 -----------------------------------
 Paralel 25000, 16 threads
 Dimensio dades =~ 4768.75 Mbytes
+TEMPS PARALELITZAT: 0.827816
 Suma elements de D: 40562635143 
 
-real	0m1,378s
-user	0m12,937s
-sys	0m1,858s
+real	0m1,387s
+user	0m11,865s
+sys	0m1,405s
 -----------------------------------
 Paralel 35000, 16 threads
 Dimensio dades =~ 9346.54 Mbytes
+TEMPS PARALELITZAT: 1.651486
 Suma elements de D: 79504372270 
 
-real	0m2,241s
-user	0m21,546s
-sys	0m2,499s
+real	0m2,507s
+user	0m23,051s
+sys	0m3,418s
 -----------------------------------
 Paralel 45000, 16 threads
 Dimensio dades =~ 15450.2 Mbytes
+TEMPS PARALELITZAT: 2.811866
 Suma elements de D: 131415175060 
 
-real	0m4,565s
-user	0m37,970s
-sys	0m5,144s
+real	0m4,368s
+user	0m40,688s
+sys	0m4,367s
 -----------------------------------
 ***********************************
 Paralel 15000, 32 threads
 Dimensio dades =~ 1716.84 Mbytes
+TEMPS PARALELITZAT: 0.184677
 Suma elements de D: 14604309281 
 
-real	0m0,331s
-user	0m5,415s
-sys	0m0,645s
+real	0m0,332s
+user	0m5,293s
+sys	0m0,628s
 -----------------------------------
 Paralel 25000, 32 threads
 Dimensio dades =~ 4768.75 Mbytes
+TEMPS PARALELITZAT: 0.593415
 Suma elements de D: 40562635143 
 
-real	0m0,996s
-user	0m17,096s
-sys	0m1,899s
+real	0m1,030s
+user	0m17,251s
+sys	0m1,765s
 -----------------------------------
 Paralel 35000, 32 threads
 Dimensio dades =~ 9346.54 Mbytes
+TEMPS PARALELITZAT: 1.152735
 Suma elements de D: 79504372270 
 
 real	0m1,868s
-user	0m32,442s
-sys	0m4,945s
+user	0m32,312s
+sys	0m4,622s
 -----------------------------------
 Paralel 45000, 32 threads
 Dimensio dades =~ 15450.2 Mbytes
+TEMPS PARALELITZAT: 2.281839
 Suma elements de D: 131415175060 
 
-real	0m3,460s
-user	1m0,412s
-sys	0m8,960s
+real	0m3,556s
+user	1m3,629s
+sys	0m9,459s
 -----------------------------------
 ***********************************
 Paralel 15000, 64 threads
 Dimensio dades =~ 1716.84 Mbytes
+TEMPS PARALELITZAT: 0.094007
 Suma elements de D: 14604309281 
 
-real	0m0,316s
-user	0m5,269s
-sys	0m0,670s
+real	0m0,315s
+user	0m5,410s
+sys	0m0,618s
 -----------------------------------
 Paralel 25000, 64 threads
 Dimensio dades =~ 4768.75 Mbytes
+TEMPS PARALELITZAT: 0.360516
 Suma elements de D: 40562635143 
 
-real	0m1,013s
-user	0m19,713s
-sys	0m2,442s
+real	0m1,030s
+user	0m20,804s
+sys	0m2,295s
 -----------------------------------
 Paralel 35000, 64 threads
 Dimensio dades =~ 9346.54 Mbytes
+TEMPS PARALELITZAT: 0.659012
 Suma elements de D: 79504372270 
 
-real	0m1,877s
-user	0m39,062s
-sys	0m4,501s
+real	0m1,809s
+user	0m38,275s
+sys	0m3,949s
 -----------------------------------
 Paralel 45000, 64 threads
 Dimensio dades =~ 15450.2 Mbytes
+TEMPS PARALELITZAT: 1.395694
 Suma elements de D: 131415175060 
 
-real	0m3,557s
-user	1m24,649s
-sys	0m5,319s
+real	0m3,582s
+user	1m23,578s
+sys	0m5,819s
 -----------------------------------
 ***********************************
 Paralel 15000, 128 threads
 Dimensio dades =~ 1716.84 Mbytes
+TEMPS PARALELITZAT: 0.042976
 Suma elements de D: 14604309281 
 
-real	0m0,302s
-user	0m4,727s
-sys	0m0,547s
+real	0m0,294s
+user	0m5,037s
+sys	0m0,470s
 -----------------------------------
 Paralel 25000, 128 threads
 Dimensio dades =~ 4768.75 Mbytes
+TEMPS PARALELITZAT: 0.186548
 Suma elements de D: 40562635143 
 
 real	0m0,963s
-user	0m22,179s
-sys	0m1,948s
+user	0m21,617s
+sys	0m2,287s
 -----------------------------------
 Paralel 35000, 128 threads
 Dimensio dades =~ 9346.54 Mbytes
+TEMPS PARALELITZAT: 0.363661
 Suma elements de D: 79504372270 
 
-real	0m1,717s
-user	0m41,630s
-sys	0m4,250s
+real	0m1,784s
+user	0m41,929s
+sys	0m4,668s
 -----------------------------------
 Paralel 45000, 128 threads
 Dimensio dades =~ 15450.2 Mbytes
+TEMPS PARALELITZAT: 0.774594
 Suma elements de D: 131415175060 
 
-real	0m3,473s
-user	1m30,765s
-sys	0m7,743s
+real	0m3,531s
+user	1m31,561s
+sys	0m7,658s
 -----------------------------------
 ***********************************
 Paralel 15000, 256 threads
 Dimensio dades =~ 1716.84 Mbytes
+TEMPS PARALELITZAT: 0.019805
 Suma elements de D: 14604309281 
 
-real	0m0,345s
-user	0m4,745s
-sys	0m0,544s
+real	0m0,336s
+user	0m4,484s
+sys	0m0,595s
 -----------------------------------
 Paralel 25000, 256 threads
 Dimensio dades =~ 4768.75 Mbytes
+TEMPS PARALELITZAT: 0.092559
 Suma elements de D: 40562635143 
 
-real	0m0,977s
-user	0m22,391s
-sys	0m1,759s
+real	0m0,952s
+user	0m21,836s
+sys	0m1,873s
 -----------------------------------
 Paralel 35000, 256 threads
 Dimensio dades =~ 9346.54 Mbytes
+TEMPS PARALELITZAT: 0.176582
 Suma elements de D: 79504372270 
 
-real	0m1,725s
-user	0m41,321s
-sys	0m3,668s
+real	0m1,692s
+user	0m41,355s
+sys	0m3,896s
 -----------------------------------
 Paralel 45000, 256 threads
 Dimensio dades =~ 15450.2 Mbytes
+TEMPS PARALELITZAT: 0.376254
 Suma elements de D: 131415175060 
 
-real	0m3,387s
-user	1m28,431s
-sys	0m7,389s
+real	0m3,457s
+user	1m28,546s
+sys	0m7,845s
 -----------------------------------
 ***********************************
